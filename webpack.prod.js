@@ -2,7 +2,7 @@
 
 const webpack = require("webpack");
 const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -10,20 +10,13 @@ module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "mdtohtml.js",
-    library: "MTH",
+    filename: "mdtohtml.min.js",
+    library: "DOC",
     libraryTarget: "umd",
     umdNamedDefine: true
   },
   module: {
     rules: [
-      // {
-      //   test: /\.less$/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: "style-loader",
-      //     use: ["css-loader", "less-loader"]
-      //   })
-      // },
       {
         test: /\.css$/,
         use: [

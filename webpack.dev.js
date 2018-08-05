@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "mdtohtml.js",
-    library: "MTH",
+    library: "DOC",
     libraryTarget: "umd",
     umdNamedDefine: true
   },

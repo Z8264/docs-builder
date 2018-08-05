@@ -8,37 +8,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-    div {
-      width:700px;
+
+    #md {
+      width: 700px;
       margin: 0 auto;
-      padding:50px;
+      padding: 50px;
     }
+
   </style>
   <script src="/dist/mdtohtml.js"></script>
 </head>
 
 <body>
-  <ul>
-    <li><a href="">简介</a></li>
-    <li><a href="">初始化</a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-    <li><a href=""></a></li>
-  </ul>
+
   <div id="md"></div>
+
   <script>
     (function () {
       let dom = document.getElementById('md');
-      let xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          MTH.html(dom, xhr.responseText);
-        }
-      }
-      xhr.open("GET", "a.md", true);
-      xhr.send();
+      DOC.file(dom, 'a.md');
     })();
-
   </script>
 </body>
 
