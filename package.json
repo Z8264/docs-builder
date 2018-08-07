@@ -12,13 +12,7 @@
   "dependencies": {
     "github-markdown-css": "^2.10.0",
     "highlightjs": "^9.10.0",
-    "markdown-contents": "^1.0.10",
-    "markdown-toc": "^1.2.0",
-    "marked": "^0.4.0",
-    "marked-toc": "^0.3.0",
-    "markup-it": "^9.0.0",
-    "remarkable": "^1.7.1",
-    "slate": "^0.36.2"
+    "markdown-toc": "^1.2.0"
   },
   "devDependencies": {
     "babel-loader": "^7.1.4",

@@ -7,28 +7,41 @@
   <title>PANDA ICON</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-
-    #md {
-      width: 700px;
-      margin: 0 auto;
-      padding: 50px;
-    }
-
-  </style>
   <script src="/dist/mdtohtml.js"></script>
 </head>
 
 <body>
+  <!-- <header>
+    <div>
+      <strong>PSbar</strong>
+      <span>熊猫sidebar组件</span>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li>导航</li>
+      <li>文档</li>
+      <li>初始化api</li>
+    </ul>
+  </nav>
+  <section id="md"></section> -->
 
-  <div id="md"></div>
-
-  <script>
-    (function () {
-      let dom = document.getElementById('md');
-      DOC.file(dom, 'a.md');
-    })();
-  </script>
 </body>
+
+<script>
+  (function () {
+    // let dom = document.getElementById('md');
+    // DOC.file(dom, 'a.md');
+    DOC.auto({
+      title:'PSbar',
+      des:'熊猫TV，侧边栏导航组件',
+      docs:[
+        {file:'a.md',title:'简介'},
+        {file:'',title:'牛逼'},
+        {file:'',title:'aaa'}
+      ]
+    })
+  })();
+</script>
 
 </html>
