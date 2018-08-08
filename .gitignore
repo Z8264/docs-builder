@@ -26,5 +26,3 @@ output.tar.gz
 npm-debug.log
 nohup.out
 picasso.json
-docs/
-build/

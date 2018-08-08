@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>DOCS Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="./docs-builder.min.js"></script>
+</head>
+
+<body>
+</body>
+
+<script>
+  (function () {
+    DOCS.auto({
+      title: 'DOCS Builder',
+      des: '快速构建md文档页面解决方案',
+      docs: [
+        { file: 'readme.md', title: '介绍' },
+        { file: 'api.md', title: 'API' }
+      ],
+      current: 0
+    })
+  })();
+</script>
+
+</html>
