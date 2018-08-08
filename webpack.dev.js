@@ -8,8 +8,8 @@ module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "mdtohtml.js",
-    library: "DOC",
+    filename: "docs-builder.js",
+    library: "DOCS",
     libraryTarget: "umd",
     umdNamedDefine: true
   },

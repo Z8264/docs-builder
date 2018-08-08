@@ -7,7 +7,7 @@
   <title>PANDA ICON</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="/dist/mdtohtml.js"></script>
+  <script src="/dist/docs-builder.js"></script>
 </head>
 
 <body>
@@ -32,14 +32,15 @@
   (function () {
     // let dom = document.getElementById('md');
     // DOC.file(dom, 'a.md');
-    DOC.auto({
-      title:'PSbar',
-      des:'熊猫TV，侧边栏导航组件',
-      docs:[
-        {file:'a.md',title:'简介'},
-        {file:'',title:'牛逼'},
-        {file:'',title:'aaa'}
-      ]
+    DOCS.auto({
+      title: 'PSbar',
+      des: '熊猫TV，侧边栏导航组件',
+      docs: [
+        { file: 'a.md', title: '简介' },
+        { file: 'b.md', title: '牛逼' },
+        { file: '', title: 'aaa' }
+      ],
+      current: 0
     })
   })();
 </script>

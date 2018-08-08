@@ -10,8 +10,8 @@ module.exports = {
   entry: "./src/app.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "mdtohtml.min.js",
-    library: "DOC",
+    filename: "docs-builder.min.js",
+    library: "DOCS",
     libraryTarget: "umd",
     umdNamedDefine: true
   },

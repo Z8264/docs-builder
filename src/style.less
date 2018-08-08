@@ -32,6 +32,10 @@
   box-sizing: border-box;
 }
 
+body{
+  overflow-y: scroll;
+}
+
 header {
   padding: 0;
   margin: 0;
@@ -94,6 +98,7 @@ nav {
     font-size: 14px;
     font-weight: normal;
     color: #666;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
   }
   > ul {
     margin: 0;
@@ -117,6 +122,9 @@ nav {
     color: #333;
     &:hover {
       color: #08c;
+    }
+    &.on{
+      color:#08c;
     }
   }
 }

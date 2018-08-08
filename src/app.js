@@ -38,20 +38,26 @@ let options = {
 let remarkable = new Remarkable(options);
 
 /**
- *
+ * DOC.md()
+ * 将md转换为html
  * @param {DOM} dom
  * @param {String} str
  * @param {Function} cb
  */
 function md(dom, str = "", cb = () => {}) {
-  if (!dom) return;
-  dom.innerHTML = `<article class="markdown-body">${remarkable.render(
-    str
-  )}</article>`;
-  cb(str);
+  let res = remarkable.render(str);
+  if (dom) {
+    dom.innerHTML = `
+      <article class="markdown-body">
+        ${res}
+      </article>
+    `;
+  }
+  cb(res);
 }
 /**
- *
+ * DOC.file()
+ * 读取文件，获取md并转换为html
  * @param {DOM} dom
  * @param {URL} file
  * @param {Function} cb
@@ -59,18 +65,30 @@ function md(dom, str = "", cb = () => {}) {
 function file(dom, file = "", cb = () => {}) {
   let xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      if (dom) md(dom, xhr.responseText);
-      cb(xhr.responseText);
+    if (xhr.readyState == 4) {
+      let res;
+      if (xhr.status == 200) {
+        res = xhr.responseText;
+      } else {
+        res = "error";
+      }
+      if (dom) md(dom, res);
+      cb(res);
     }
   };
   xhr.open("GET", file, true);
   xhr.send();
 }
 /**
- *
+ * DOC.auto
+ * 自动构建文档
+ * @param {Object} options
  */
+let isAuto = false;
 function auto(options) {
+  if (isAuto) return;
+  isAuto = true;
+
   let root = document.querySelector("body");
   let lists, section;
   let cache = [];
@@ -85,22 +103,37 @@ function auto(options) {
   [...lists].forEach((el, i) => {
     el.addEventListener("click", e => {
       if (current === i) return;
+      _setCurrent(i);
+    });
+  });
 
-      if (current) lists[current].classList.remove("on");
-      lists[i].classList.add("on");
-      current = i;
+  if (options.current === 0 || options.current) {
+    _setCurrent(options.current);
+  }
 
+  function _setCurrent(i) {
+    if (current != null) lists[current].classList.remove("on");
+    lists[i].classList.add("on");
+    current = i;
+
+    // 加载文件流程
+    if (options.docs[i].file) {
       if (cache[i]) {
         md(section, cache[i]);
       } else {
         cache[i] = true;
-        file("", options.docs[i].file, str => {
-          cache[i] = str;
+        file("", options.docs[i].file, res => {
+          if (res == "error") {
+            cache[i] = false;
+            md(section, "文档加载失败");
+            return;
+          }
+          cache[i] = res;
           md(section, cache[i]);
         });
       }
-    });
-  });
+    }
+  }
 }
 
 export { md, file, auto };
