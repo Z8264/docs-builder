@@ -1,5 +1,5 @@
 
-## 简介
+# 简介
 
 pandatv sidebar 组件，简称PSbar
 
@@ -8,7 +8,7 @@ pandatv sidebar 组件，简称PSbar
 |2.0.0|https://s.h2.pdim.gs/static/3bd5dc7077b52778/PSbar_v2.0.0_beta.js|
 
 
-#### 安装依赖
+### 安装依赖
 
 * jquery
   * a
@@ -18,7 +18,7 @@ pandatv sidebar 组件，简称PSbar
 * jquery ui
 * prefect-scroll
 
-#### 示例
+### 示例
 
 ```
 // 容器
@@ -37,13 +37,13 @@ PSbar.init(dom, options, function(){
 
 ## 初始化
 
-#### 使用`init`方法初始化
+### 使用`init`方法初始化
 
 ```
 PSbar.init([dom],[options],[callback])
 ```
 
-#### 使用同步`syncInit`和异步`asyncInit`方法依次初始化
+### 使用同步`syncInit`和异步`asyncInit`方法依次初始化
 
 同步`syncInit`和异步`asyncInit`方法是将`init`方法的初始化过程划分为两部分，以便让用户更快的看到页面。
 
@@ -77,7 +77,7 @@ PSbar.init($('#container'),{
 
 ## 业务模块参数 `[options]`
 
-#### LOGO `module_logo` `[Object]`
+### LOGO `module_logo` `[Object]`
 
 |参数|默认值|说明|
 |--|--|--|
@@ -94,7 +94,7 @@ PSbar.init($('#container'),{
 ```
 
 
-#### 搜索 `module_search` `[Object]`
+### 搜索 `module_search` `[Object]`
 
 |参数|默认值|说明|
 |--|--|--|
@@ -119,7 +119,7 @@ PSbar.init($('#container'),{
 
 
 
-#### 广告推荐 `module_ads` `[Array]`
+### 广告推荐 `module_ads` `[Array]`
 
 CMS资源配置："侧边栏推荐活动配置" 
 
@@ -149,7 +149,7 @@ PSbar.init($("#container"), {
   ]
 });
 ```
-#### 导航菜单 `module_menu` `[Array]`
+### 导航菜单 `module_menu` `[Array]`
 
 |参数|默认值|说明|
 |--|--|--|
@@ -180,7 +180,7 @@ PSbar.init($("#container"), {
 });
 ```
 
-#### 推荐分类 `module_recommend` `[Array]`
+### 推荐分类 `module_recommend` `[Array]`
 
 推荐分类，在未登录或未进行个人定制的情况下显示。
 
@@ -188,13 +188,13 @@ CMS资源配置："侧边栏推荐分类设置"
 
 此业务禁止自定义配置。
 
-#### 全部分类 `module_cates` `[Array]`
+### 全部分类 `module_cates` `[Array]`
 
 CMS资源配置："分类列表"
 
 此业务禁止自定义配置。
 
-#### 分类补充 `module_labels` `[Array]`
+### 分类补充 `module_labels` `[Array]`
 
 向全部分类列表中注入`label`业务标签，注入示例：
 
@@ -215,7 +215,7 @@ PSbar.init($("#container"), {
 });
 ```
 
-#### 自定义链接 `module_link` `[Array]`
+### 自定义链接 `module_link` `[Array]`
 
 ```
 PSbar.init($("#container"), {
@@ -234,11 +234,11 @@ PSbar.init($("#container"), {
 });
 ```
 
-#### 自定义帮助 `module_help` `[Array]`
+### 自定义帮助 `module_help` `[Array]`
 
 [参看自定义链接]
 
-#### 用户面板 `module_user` `[Object]`
+### 用户面板 `module_user` `[Object]`
 
 |参数|默认值|描述|
 |--|--|--|

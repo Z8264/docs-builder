@@ -4,7 +4,8 @@ import "github-markdown-css";
 // css: highlight
 import "highlightjs/styles/default.css";
 // css: fit for Chinese
-import "./style.less";
+import "./less/md-polyfill.less";
+import "./less/style.less";
 
 /**
  * 代码高亮插件
@@ -68,7 +69,7 @@ function file(dom, file = "", cb = () => {}) {
     if (xhr.readyState == 4) {
       let res;
       if (xhr.status == 200) {
-        res = xhr.responseText;
+        res = xhr.responseText ? xhr.responseText : "!! 这个文档没有内容";
       } else {
         res = "error";
       }
@@ -112,10 +113,15 @@ function auto(options) {
   }
 
   function _setCurrent(i) {
+    // current
     if (current != null) lists[current].classList.remove("on");
     lists[i].classList.add("on");
     current = i;
 
+    // loading...
+    section.innerHTML = "<p>文档加载中...</p>";
+
+    // setTimeout(function() {
     // 加载文件流程
     if (options.docs[i].file) {
       if (cache[i]) {
@@ -125,14 +131,15 @@ function auto(options) {
         file("", options.docs[i].file, res => {
           if (res == "error") {
             cache[i] = false;
-            md(section, "文档加载失败");
-            return;
+            md(section, "!! 文档加载失败");
+          } else {
+            cache[i] = res;
+            md(section, cache[i]);
           }
-          cache[i] = res;
-          md(section, cache[i]);
         });
       }
     }
+    // }, 2000);
   }
 }
 

@@ -11,24 +11,26 @@ const FOR = (data, tpl = () => {}) => {
 };
 
 export default data => `
-  <header>
+  <header class="docs-header">
     <div>
       <strong>${data.title}</strong>
       <span>${data.des}</span>
     </div>
   </header>
-  <nav>
-    <strong>Document</strong>
-    <ul>
-    ${FOR(
-      data.docs,
-      (val, i) => `
-      <li>
-        <a href="javascript:void(0)">${val.title}</a>
-      </li>
-    `
-    )}
-    </ul>
+  <nav class="docs-nav">
+    <div>
+      <strong>Document</strong>
+      <ul>
+      ${FOR(
+        data.docs,
+        (val, i) => `
+        <li>
+          <a href="javascript:void(0)">${val.title}</a>
+        </li>
+      `
+      )}
+      </ul>
+    </div>
   </nav>
-  <section></section>
+  <section class="docs-section"></section>
 `;
