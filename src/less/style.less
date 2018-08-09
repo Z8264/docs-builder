@@ -1,0 +1,159 @@
+// 文档样式
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Consolas, "微软雅黑";
+  overflow-y: scroll;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  height: 50px;
+  background: rgba(255,255,255,.7);
+  border-bottom: 1px solid #eee;
+  // box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  > div {
+    width: 1300px;
+    margin: 0 auto;
+  }
+  strong {
+    display: block;
+    float: left;
+    padding: 0 20px;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  span {
+    display: block;
+    float: left;
+    padding: 10px 0 0 30px;
+    line-height: 38px;
+    font-size: 14px;
+    // font-weight: bold;
+    color: #666;
+  }
+}
+section {
+  position: relative;
+  padding: 100px 50px;
+  width: 800px;
+  margin: 0 auto;
+  /* background: #ddd; */
+}
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: calc(50% + 400px);
+  bottom: 0;
+  border-right: 1px solid #eee;
+  background: #fff;
+  > div {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    padding: 20px 0;
+    width: 250px;
+    overflow-y: auto;
+  }
+  strong {
+    display: block;
+    padding: 0 23px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #999;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+  }
+  ul li {
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+  }
+  a {
+    position: relative;
+    display: block;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 10px 0 40px;
+    text-decoration: none;
+    line-height: 36px;
+    font-size: 15px;
+    // font-weight: bold;
+    color: #333;
+    transition: all ease-out 0.3s;
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 25px;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #ccc;
+      background: #f1f1f1;
+      transition: all ease-out 0.3s;
+    }
+    &:hover {
+      color: #08c;
+    }
+    &.on {
+      color: #08c;
+      &:after {
+        box-shadow: 0 0 0 2px #08c;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1320px) {
+  header {
+    > div {
+      width: 100%;
+    }
+  }
+  nav {
+    right: calc(100% - 250px);
+  }
+  section {
+    margin-left: 250px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  header {
+    border:none;
+    box-shadow: 0 1px 1px rgba(0,0,0,.4);
+    > div {
+      width: 100%;
+    }
+  }
+  nav {
+    display: none;
+    right: calc(100% - 250px);
+  }
+  section {
+    width: 100%;
+  }
+}
