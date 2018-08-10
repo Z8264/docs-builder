@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    var config = {
+      components: [
+        {
+          title: 'panda-icon',
+          img: '',
+          des: '熊猫主站通用业务图片图标',
+          href: ''
+        },
+        {
+          title: 'PSbar',
+          img: 'psbar.png',
+          des: '熊猫主站侧边栏导航组件',
+          href: ''
+        },
+        {
+          title: 'PHeader',
+          img: '',
+          des: '熊猫主站顶部导航组件',
+          href: ''
+        },
+        {
+          title: 'ricon',
+          img: '',
+          des: '熊猫主站房间页面iconfont图标集',
+          href: ''
+        },
+        {
+          title: 'canvas banner',
+          img: '',
+          des: 'canvas动画横幅',
+          href: ''
+        }
+      ],
+      tools: [
+        {
+          title: '皮肤制作工具',
+          img: '',
+          des: '------',
+          href: ''
+        }
+      ]
+    }
+  </script>
+
+</head>
+
+<body>
+  <header>
+    <strong>panda.tv 主站相关项目</strong>
+  </header>
+  <section>
+    <h2>组件库</h2>
+    <ul id="components"></ul>
+    <h2>工具库</h2>
+    <ul id="tools"></ul>
+  </section>
+</body>
+
+<script>
+  !(function () {
+    // 组件库
+    let components = '';
+    config.components.map((el, i) => {
+      components += `
+      <li>
+        <a href="${el.href}" target="_blank">
+          <div>
+            <img src="images/${el.img}">
+          </div>
+          <strong>${el.title}</strong>
+          <span>${el.des}</span>
+        </a>
+      </li>
+      `
+    })
+    document.getElementById('components').innerHTML = components;
+    // 工具库
+    let tools = '';
+    config.tools.map((el, i) => {
+      tools += `
+      <li>
+        <a href="${el.href}" target="_blank">
+          <div>
+            <img src="images/${el.img}">
+          </div>
+          <strong>${el.title}</strong>
+          <span>${el.des}</span>
+        </a>
+      </li>
+      `
+    })
+    document.getElementById('tools').innerHTML = tools;
+  })();
+</script>
+
+</html>
