@@ -91,11 +91,13 @@ function auto(options) {
   isAuto = true;
 
   let root = document.querySelector("body");
+  let title = document.querySelector("title");
   let lists, section;
   let cache = [];
   let current = null;
 
   // 写入模板
+  title.innerHTML = options.title;
   root.innerHTML = tpl(options);
   // 绑定事件
   lists = root.querySelectorAll("nav a");
