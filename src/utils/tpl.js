@@ -30,6 +30,11 @@ export default data => `
       `
       )}
       </ul>
+      <!-- 
+      <strong>Link</strong>
+      <a href="" target="_blank">GIT</a>
+      <a href="" target="_blank">NPM</a>
+      -->
     </div>
   </nav>
   <section class="docs-section"></section>

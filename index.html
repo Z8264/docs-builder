@@ -15,16 +15,29 @@
 
 <script>
   (function () {
+    
     DOCS.auto({
       title: 'PSbar',
-      des: '熊猫TV，侧边栏导航组件',
+      des: '熊猫TV侧边栏导航组件',
+      git: '',
+      npm: '',
       docs: [
-        { file: 'a.md', title: '测试文档' },
-        { file: 'b.md', title: '空文档测试' },
-        { file: 'error.md', title: '错误文档测试' }
+        { file: 'a.md', title: '标准文档' },
+        { file: 'b.md', title: '空文档' },
+        { file: 'error.md', title: '错误文档' },
+        { file: 'c.md', title: '内嵌html', cb: demoInit },
+        { file: 'a2.md', title: '标准文档2' }
       ],
       current: 0
-    })
+    });
+
+    function demoInit() {
+      var dom = document.querySelector('#demo a');
+      dom && dom.addEventListener('click', function () {
+        alert('点击事件测试');
+        return;
+      })
+    }
   })();
 </script>
 
