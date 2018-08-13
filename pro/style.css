@@ -16,7 +16,7 @@ header {
   left: 0;
   right: 0;
   padding: 0;
-  height: 100px;
+  height: 50px;
   background: hsla(0, 0%, 100%, 0.7);
   border-bottom: 1px solid #eee;
 }
@@ -26,10 +26,9 @@ header > div {
 }
 header strong {
   display: block;
-  font-size: 30px;
-  line-height: 100px;
-  font-weight: normal;
-  text-align: center;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: bold;
 }
 section {
   width: 1200px;
@@ -37,11 +36,12 @@ section {
   padding: 30px 0 100px;
 }
 
-h2 {
+section strong {
   padding: 20px 10px 0;
   font-size: 18px;
   line-height: 40px;
-  font-weight: bold;
+  font-weight: normal;
+  color: #999;
 }
 
 ul {
@@ -60,7 +60,6 @@ li a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  /* border: 1px solid #ddd; */
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
