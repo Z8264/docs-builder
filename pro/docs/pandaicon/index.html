@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://s.h2.pdim.gs/static/68fc57632c338270.js"></script>
+
+  <link rel="stylesheet" href="https://www.panda.tv/cmstatic/pandaicon.css">
+</head>
+
+<body>
+</body>
+
+<script>
+  (function () {
+    DOCS.auto({
+      title: 'Panda Icon',
+      des: '熊猫直播，通用业务图标集',
+      docs: [
+        { file: '0-introduction.md', title: '介绍 introduction', cb: init },
+        { file: '1-development.md', title:'开发 development'}
+      ],
+      current: 0
+    })
+
+    function init() {
+      // level
+      (function () {
+        let str = '<ul class="clearfix">';
+        for (let i = 1; i <= 45; i++) {
+          str += `
+          <li>
+            <i class="icon-level icon-level-${i}"></i>
+            <span>${i}</span>
+          </li>
+          `;
+        }
+        str += `
+          <li>
+            <i class="icon-level icon-level-mystery"></i>
+            <span>mystery</span>
+          </li>
+          `;
+        str += '</ul>'
+        document.getElementById('level').innerHTML = str;
+      })();
+      // hostlevel
+      (function () {
+        let str = '<ul class="clearfix">';
+        for (let i = 1; i <= 20; i++) {
+          str += `
+          <li>
+            <i class="icon-host-level icon-host-level-${i}"></i>
+            <span>${i}</span>
+          </li>
+          `;
+        }
+        for (let i = 1; i <= 20; i++) {
+          str += `
+          <li>
+            <i class="icon-host-level icon-host-level-${i} icon-host-level-grey"></i>
+            <span>${i}</span>
+          </li>
+          `;
+        }
+        str += `
+          <li>
+            <i class="icon-host-level icon-host-level-vip"></i>
+            <span>vip</span>
+          </li>
+          `;
+        str += `
+          <li style="width:10%">
+            <i class="icon-host-level icon-host-level-vip-big"></i>
+            <span>vip-big</span>
+          </li>
+          `;
+        str += '</ul>'
+        document.getElementById('hostlevel').innerHTML = str;
+      })();
+      // badge
+      (function () {
+        let str = '<ul class="clearfix">';
+        for (let i = 1; i <= 24; i++) {
+          str += `
+          <li>
+            <i class="icon-badge icon-badge-level-${i} icon-badge-type-${i % 6 == 0 ? 6 : i % 6}"><em>四个汉字</em></i>
+            <span>${i}</span>
+          </li>
+          `;
+        }
+        for (let i = 1; i <= 24; i++) {
+          str += `
+          <li>
+            <i class="icon-badge icon-badge-level-${i} icon-badge-type-${i % 6 == 0 ? 6 : i % 6} icon-badge-size-big"></i>
+            <span>${i}</span>
+          </li>
+          `;
+        }
+        str += '</ul>'
+        document.getElementById('badge').innerHTML = str;
+      })();
+      // hero
+      (function () {
+        let str = '<ul class="clearfix">';
+        for (let i = 1; i <= 6; i++) {
+          str += `
+          <li>
+            <i class="icon-hero-vip icon-hero-vip-fashi-${i}"></i>
+            <span>fashi-${i}</span>
+          </li>
+          `;
+        }
+        for (let i = 1; i <= 6; i++) {
+          str += `
+          <li>
+            <i class="icon-hero-vip icon-hero-vip-mushi-${i}"></i>
+            <span>mushi-${i}</span>
+          </li>
+          `;
+        }
+        for (let i = 1; i <= 6; i++) {
+          str += `
+          <li>
+            <i class="icon-hero-vip icon-hero-vip-qishi-${i}"></i>
+            <span>qishi-${i}</span>
+          </li>
+          `;
+        }
+        str += '</ul>'
+        document.getElementById('hero').innerHTML = str;
+      })();
+
+    }
+  })();
+</script>
+
+</html>
