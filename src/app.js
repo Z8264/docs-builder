@@ -2,7 +2,7 @@
 // need npm github-markdown-css
 import "github-markdown-css";
 // css: highlight
-import "highlightjs/styles/default.css";
+import 'highlight.js/styles/default.css';
 // css: fit for Chinese
 import "./less/md-polyfill.less";
 import "./less/style.less";

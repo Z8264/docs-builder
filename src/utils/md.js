@@ -1,33 +1,35 @@
-/**
- * 代码高亮插件
- * need npm highlightjs
- */
-import hljs from "highlightjs";
-/**
- * md转换插件
- * need npm remarkable
- */
-import Remarkable from "remarkable/dist/remarkable.min.js";
 
+// import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/highlight';
+import javascript from 'highlight.js/lib/languages/javascript';
+import css from 'highlight.js/lib/languages/css';
+import xml from 'highlight.js/lib/languages/xml';
+import diff from 'highlight.js/lib/languages/diff';
+import bash from 'highlight.js/lib/languages/bash';
 
-let options = {
-  html: true,
-  linkify: false,
-  langPrefix: "language-",
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (err) { }
-    }
-    try {
-      return hljs.highlightAuto(str).value;
-    } catch (err) { }
-    return "";
-  }
-};
+import marked from "marked";
 
-let remarkable = new Remarkable(options);
+// 语言
+hljs.registerLanguage('js', javascript);
+hljs.registerLanguage('css', css);
+hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('diff', diff);
+hljs.registerLanguage('bash', bash);
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  highlight: function(code,lang) {
+    return hljs.highlightAuto(code).value;
+  },
+  pedantic: false,
+  gfm: true,
+  tables: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
 
 /**
  * DOC.md()
@@ -37,7 +39,7 @@ let remarkable = new Remarkable(options);
  * @param {Function} cb
  */
 export default function md(dom, str = "", cb = () => { }) {
-  let res = remarkable.render(str);
+  let res = marked(str);
   if (dom) {
     dom.innerHTML = `
       <article class="markdown-body">
